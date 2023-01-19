@@ -1,0 +1,17 @@
+.v-application {
+  overflow: hidden;
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  ul {
+    list-style: none;
+  }
+  .btn-style {
+    background: linear-gradient(to bottom, #03A5DB, #06689B);
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 50%);
+    &:hover {
+      background: linear-gradient(to bottom, #06689B, #03A5DB);
+    }
+  }
+}

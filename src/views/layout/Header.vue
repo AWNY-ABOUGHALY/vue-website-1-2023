@@ -1,0 +1,202 @@
+<template>
+  <header class="overflow-hidden" :style="`height: ${headerHeight+'px'}`">
+    <nav>
+      <v-container class="py-0 d-flex justify-end" style="max-height:100%">
+        <div class="navholder d-flex">
+          <v-select
+            v-model="country"
+            :items="countries"
+            :menu-props="{ bottom: true, offsetY: false, openOnHover: true }"
+            item-color="primary"
+            dark
+            hide-details
+            background-color="transparent"
+            dense
+            flat solo
+            class="ma-0 py-1"
+          ></v-select>
+          <v-select
+            v-model="lang"
+            :items="languages"
+            :menu-props="{ bottom: true, offsetY: false, openOnHover: true }"
+            item-color="primary"
+            dark
+            hide-details
+            background-color="transparent"
+            dense
+            flat solo
+            class="ma-0 py-1"
+          ></v-select>
+          <v-select
+            v-model="currency"
+            :items="currencies"
+            :menu-props="{ bottom: true, offsetY: false, openOnHover: true }"
+            item-color="primary"
+            dark
+            hide-details
+            background-color="transparent"
+            dense
+            flat solo
+            class="ma-0 py-1"
+          ></v-select>
+        </div>
+      </v-container>
+    </nav>
+    <div class="mainhead container py-0 overflow-hidden" :style="`height: ${headerHeight+'px'}`">
+      <div class="d-flex flex-column flex-md-row justify-md-space-between">
+        <div class="d-flex justify-space-between align-center" style="height: 110px;">
+          <router-link to="/">
+            <img
+              src="@/assets/images/logo.png"
+              class="mainlogo"
+            />
+          </router-link>
+          <v-icon class="white--text d-md-none" @click="mobileNavbarToggel">mdi-menu</v-icon>
+        </div>
+        <v-divider dark class="d-md-none mb-3"></v-divider>
+        <div class="menuItems d-flex flex-column flex-md-row justify-end align-center mb-2 mb-md-0">
+          <router-link to="/" class="white--text mb-3 mb-md-0 me-md-5">
+            <span class="font-weight-medium text-lg-h6">University Courses</span>
+          </router-link>
+          <router-link to="/" class="white--text mb-3 mb-md-0 me-md-5">
+            <span class="font-weight-medium text-lg-h6">English Courses</span>
+          </router-link>
+          <router-link to="/" class="white--text mb-3 mb-md-0 me-md-5">
+            <span class="font-weight-medium text-lg-h6">Get Settled</span>
+          </router-link>
+          <router-link to="/" class="white--text mb-3 mb-md-0 me-md-5">
+            <span class="font-weight-medium text-lg-h6">About Us</span>
+          </router-link>
+          <router-link to="/" class="white--text mb-3 mb-md-0 me-md-5">
+            <span class="font-weight-medium text-lg-h6">Contact Us</span>
+          </router-link>
+          <v-btn class="signinbtn text-capitalize mb-3 mb-md-0 me-md-5" depressed>
+            <span class="white--text">Sign In</span>
+          </v-btn>
+          <v-icon class="white--text searchicon" @click="searchBarToggel">mdi-magnify</v-icon>
+        </div>
+      </div>
+      <div class="searchdiv d-flex align-center mx-auto">
+        <v-text-field
+          placeholder="Search Here..."
+          light
+          outlined
+          background-color="white"
+          type="search"
+          class="mx-1 font-weight-regular rounded-lg"
+          hide-details
+          dense
+        ></v-text-field>
+        <v-btn outlined class="searchbtn text-h6 white--text">Go</v-btn>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script>
+
+export default {
+  name: 'WebsiteHeader',
+  data:()=>({
+    countries: ['All','Saudi Arabia','Bahrain','Iraq','Kuwait','Oman','UAE','Qatar','Yemen','United Kingdom','United States'],
+    languages: ['English','Arabic','Turkish','Chiness'],
+    currencies: ['SAR','AED','KWD','QAR','USD','GBP'],
+    country: 'All',
+    lang: 'English',
+    currency: 'SAR',
+    items: [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+      ],
+    headerHeight: 150,
+    showSearchBar: false,
+    showMobileNavbar: false
+  }),
+  methods: {
+    searchBarToggel(){
+      this.showSearchBar = !this.showSearchBar;
+      this.headerHeight === 150 || this.headerHeight === 425
+      ? this.headerHeight += 50 
+      : this.headerHeight -= 50;
+    },
+    mobileNavbarToggel(){
+      this.showMobileNavbar = !this.showMobileNavbar
+      this.headerHeight === 150 
+      ? this.headerHeight += 275
+      : this.headerHeight === 475 
+      ? this.headerHeight -= 325
+      : this.headerHeight === 425
+      ? this.headerHeight -= 275
+      : this.headerHeight = 150;
+    },
+    resetHeader(){
+      window.innerWidth >= 900 &&  window.innerWidth <= 1000 ? this.headerHeight = 150 : null
+    }
+  },
+  created() {
+    window.addEventListener("resize", this.resetHeader);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.resetHeader);
+  },
+}
+</script>
+
+<style lang="scss">
+@import "@/assets/scss/variables";
+header {
+  background-color: $color_main_light;
+  box-shadow: 0px 1px 7px #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  transition: 0.3s;
+  nav {
+    height: 44px;
+    background-color: $color_main_dark;
+    .navholder {
+      width: 300px;
+    }
+
+    input[readonly="readonly"] {
+      width: auto;
+      max-width: 1px;
+    }
+  }
+  .mainhead {
+    position: relative;
+    .mainlogo {
+      position: absolute;
+      top: -25px;
+      width: 110px;
+      max-width: 65%;
+    }
+    .menuItems {
+      span {
+        transition: 0.3s;
+        white-space: nowrap;
+        &:hover {
+          color: $color_main_alternative;
+        }
+      }
+      .searchicon:hover {
+        color: $color_main_alternative!important;
+      }
+      .signinbtn {
+        background-color: $color_main_dark!important;
+        transition: 0.3s;
+        &:hover {
+          background-color: $color_main_alternative!important;
+        }
+      }
+    }
+    .searchdiv {
+      width: 400px;
+      max-width: 100%;
+    }
+  }
+}
+</style>

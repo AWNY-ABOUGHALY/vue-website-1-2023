@@ -1,7 +1,7 @@
 <template>
-    <div class="headtitle d-flex justify-center justify-sm-start mb-10">
-      <img src="@/assets/images/title-sep.svg" class="d-none d-sm-block"/>
-      <span class="ms-sm-5 text-uppercase text-h4 font-weight-medium">{{ headTitle }}</span>
+    <div class="headtitle d-flex flex-column justify-center justify-sm-start mb-10">
+      <span class="mb-sm-5 text-uppercase text-h4 font-weight-medium">{{ headTitle }}</span>
+      <img src="@/assets/images/title-sep.svg" class="d-none d-sm-block" style="max-width: 180px"/>
     </div>
 </template>
 

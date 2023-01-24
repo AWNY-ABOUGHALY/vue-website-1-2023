@@ -20,10 +20,10 @@ import "roboto-fontface/css/roboto/roboto-fontface.css";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 // import { faFacebook } from '@fortawesome/free-regular-svg-icons'
 
-library.add(faUserSecret, faTwitter, faFacebook)
+library.add(faUserSecret, faTwitter, faFacebook, faCaretDown)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

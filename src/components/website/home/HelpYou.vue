@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="6" class="d-flex justify-center">
-          <img src="src/assets/images/banner-illust.png" alt="Let us help you" style="max-width: 100%"/>
+          <img src="@/assets/images/banner-illust.png" alt="Let us help you" style="max-width: 100%"/>
         </v-col>
         <v-col cols="12" md="6" class="d-flex flex-column align-center align-md-start justify-space-around">
             <p class="letus text-h6 text-sm-h4 font-weight-medium text-uppercase text-center ms-md-5">Let us help you</p>
@@ -27,10 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/assets/scss/variables";
+@import "@/assets/scss/variables";
 .helpyou {
   // min-height: 100vh;
-  background-image: url('src/assets/images/banner-bg.png');
+  background-image: url('@/assets/images/banner-bg.png');
   background-size: cover;
   margin-left: -5px!important;
   .letus {

@@ -6,7 +6,7 @@
           <v-col cols="12" md="3">
             <div class="px-1 text-center mb-7 mb-md-0 text-md-start">
               <router-link :to="{name: 'Home'}">
-                <img as="link" src="src/assets/images/logo-square.png" alt="Student Center">
+                <img as="link" src="@/assets/images/logo-square.png" alt="Student Center">
               </router-link>
               <div>
                 <v-icon class="white--text me-1 my-5" dense>mdi-email-outline</v-icon>
@@ -26,7 +26,7 @@
                   <h3 class="mb-3 text-no-wrap">WhatsApp No.</h3>
                   <div class="numbers ms-1">
                     <div v-for="whatsApp in whatsApps" :key="whatsApp.country" class="mb-1">
-                      <img :src="whatsApp.image" :alt="whatsApp.country" class="me-3">
+                      <img :src="`https://swift-lead.com/site/assets/images/flags/${whatsApp.image}`" :alt="whatsApp.country" class="me-3">
                       <a :href="`https://api.whatsapp.com/send?phone=${whatsApp.number}`" target="_blank">
                         <span class="white--text">{{ whatsApp.number }}</span>
                       </a>
@@ -77,12 +77,12 @@ export default {
   data(){
     return {
       whatsApps: [
-        {country: 'kuwait', image: 'src/assets/images/WhatsApp_Numbers/kuwait.svg', number: '50733445'},
-        {country: 'bahrain', image: 'src/assets/images/WhatsApp_Numbers/bahrain.svg', number: '50733454'},
-        {country: 'egypt', image: 'src/assets/images/WhatsApp_Numbers/egypt.svg', number: '50733443'},
-        {country: 'jordan', image: 'src/assets/images/WhatsApp_Numbers/jordan.svg', number: '50733444'},
-        {country: 'ksa', image: 'src/assets/images/WhatsApp_Numbers/ksa.svg', number: '50733442'},
-        {country: 'qatar', image: 'src/assets/images/WhatsApp_Numbers/qatar.svg', number: '50733445'},
+        {country: 'kuwait', image: 'kuwait.svg', number: '50733445'},
+        {country: 'bahrain', image: 'bahrain.svg', number: '50733454'},
+        {country: 'egypt', image: 'egypt.svg', number: '50733443'},
+        {country: 'jordan', image: 'jordan.svg', number: '50733444'},
+        {country: 'ksa', image: 'ksa.svg', number: '50733442'},
+        {country: 'qatar', image: 'qatar.svg', number: '50733445'},
       ]
     }
   }

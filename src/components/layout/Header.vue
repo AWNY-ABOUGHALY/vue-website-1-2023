@@ -34,7 +34,7 @@
       <div class="d-flex flex-column flex-md-row justify-md-space-between">
         <div class="d-flex justify-space-between align-center" style="height: 110px;">
           <router-link :to="{name: 'Home'}">
-            <img src="src/assets/images/logo.png" class="mainlogo" alt="Student Center"/>
+            <img src="@/assets/images/logo.png" class="mainlogo" alt="Student Center"/>
           </router-link>
           <v-icon class="white--text d-md-none" @click="mobileNavbarToggel">mdi-menu</v-icon>
         </div>
@@ -52,7 +52,7 @@
                 class="white--text pa-0 mb-3 mb-md-0 me-md-5"
               >
                 <span class="font-weight-medium text-lg-h6">Get Settled</span>
-                <font-awesome-icon class="awesomeicon ms-1" icon="fa-solid fa-caret-down" />
+                <font-awesome-icon class="awesomeicon ms-1" icon="fa-solid fa-caret-down"/>
               </v-list-item-title>
             </template>
             <v-list>
@@ -137,7 +137,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/assets/scss/variables";
+@import "@/assets/scss/variables";
 header {
   background-color: $color_main_light;
   box-shadow: 0px 1px 7px #000;

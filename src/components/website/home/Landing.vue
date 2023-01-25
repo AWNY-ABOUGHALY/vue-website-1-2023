@@ -28,10 +28,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/assets/scss/variables";
+@import "@/assets/scss/variables";
 main {
   background-color: $color_main_primary;
-  background-image: url('src/assets/images/cover-bg.jpg');
+  background-image: url('@/assets/images/cover-bg.jpg');
   background-size: cover;
   background-position: top center;
   min-height: 100vh;

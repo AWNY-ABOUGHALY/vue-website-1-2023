@@ -6,7 +6,7 @@
         <v-row>
           <v-col v-for="card in cards" :key="card.id" cols="12" sm="6" md="4">
             <v-card :to="card.to" class="cardbox d-flex flex-column justify-center align-center py-10 px-1">
-              <img :src="card.img" style="max-width: 100%" :alt="card.title"/>
+              <img :src="`https://i.ibb.co/${card.img}`" style="max-width: 100%" :alt="card.title"/>
               <v-card-title class="cardtitle text-center text-uppercase">
                 {{ card.title }}
               </v-card-title>
@@ -26,12 +26,12 @@ export default {
     data: () => ({
         headTitle: "Our Working Areas",
         cards: [
-          {id: '1', img: 'src/assets/images/OurWorkAreas/u-courses.png', title: 'University Courses', to: '/'},
-          {id: '2', img: 'src/assets/images/OurWorkAreas/e-courses.png', title: 'English Courses', to: '/'},
-          {id: '3', img: 'src/assets/images/OurWorkAreas/accomodation.png', title: 'Accomodation', to: '/'},
-          {id: '4', img: 'src/assets/images/OurWorkAreas/sell-buy.png', title: 'Sell & Buy', to: '/'},
-          {id: '5', img: 'src/assets/images/OurWorkAreas/workshops-tuts.png', title: 'Workshops & tutors', to: '/'},
-          {id: '6', img: 'src/assets/images/OurWorkAreas/q-a.png', title: 'University Courses', to: '/'}
+          {id: '1', img: 'ZTRVZT6/u-courses.png', title: 'University Courses', to: '/'},
+          {id: '2', img: 'hW6nZFx/e-courses.png', title: 'English Courses', to: '/'},
+          {id: '3', img: 'NNqZj4w/accomodation.png', title: 'Accomodation', to: '/'},
+          {id: '4', img: 'wKB431H/sell-buy.png', title: 'Sell & Buy', to: '/'},
+          {id: '5', img: '7k9wHGX/workshops-tuts.png', title: 'Workshops & tutors', to: '/'},
+          {id: '6', img: 'wcf7LfN/q-a.png', title: 'University Courses', to: '/'}
         ]
     }),
     components: { HeadTitle }
